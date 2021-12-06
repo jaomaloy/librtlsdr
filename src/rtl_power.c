@@ -748,7 +748,7 @@ void csv_dbm(struct tuning_state *ts)
 		dbm /= (double)ts->rate;
 		dbm /= (double)ts->samples;
 		dbm  = 10 * log10(dbm);
-		fprintf(file, "%.2f, ", dbm);
+		fprintf(file, "%d/%d: %.2f, ", i1, i2, dbm);
 	}
 	dbm = (double)ts->avg[i2] / ((double)ts->rate * (double)ts->samples);
 	if (ts->bin_e == 0) {
